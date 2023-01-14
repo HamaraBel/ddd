@@ -1,0 +1,24 @@
+// Entity
+public class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string CompanyName { get; set; }
+    public string Phone { get; set; }
+    public string Email { get; set; }
+}
+
+// Value Objects
+public class PhoneNumber
+{
+    public string Number { get; set; }
+}
+
+// Domain Services
+public class CustomerService
+{
+    public void AddCustomer(Customer customer)
+    {
+        // Business Logic to add customer
+    }
+}
