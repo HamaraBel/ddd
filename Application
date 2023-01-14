@@ -1,0 +1,13 @@
+// Application Services
+public class CustomerApplicationService
+{
+    private readonly CustomerService _customerService;
+    public CustomerApplicationService(CustomerService customerService)
+    {
+        _customerService = customerService;
+    }
+    public void AddCustomer(Customer customer)
+    {
+        _customerService.AddCustomer(customer);
+    }
+}
