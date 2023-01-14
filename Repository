@@ -1,0 +1,22 @@
+// Repository
+public class CustomerRepository
+{
+    private readonly ApplicationDbContext _context;
+    public CustomerRepository(ApplicationDbContext context)
+    {
+        _context = context;
+    }
+    public void AddCustomer(Customer customer)
+    {
+        _context.Customers.Add(customer);
+        _context.SaveChanges();
+    }
+}
+
+// DataAccessLayer
+public class ApplicationDbContext : DbContext
+{
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    { }
+    public DbSet<Customer> Customers { get; set; }
+}
